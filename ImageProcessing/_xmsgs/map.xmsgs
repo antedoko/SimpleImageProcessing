@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="159" delta="old" >Net Timing constraints on signal <arg fmt="%s" index="1">clk</arg> are pushed forward through input buffer.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data2381_113</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data2381_10_f5_01_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data2381_113</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data5781_10_f5_0</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data411_14</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data2971_13_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data411_16</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data2971_15_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data411_142</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data5211_10_f5_0</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">ROM/Mrom_read_data411_121</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data5211_11_f5_0</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">rd_adrr_w&lt;6&gt;1161</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">ROM/Mrom_read_data5211_7_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="1060" delta="old" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">fi_fo/Mram_data_mem1.A</arg>&gt;:&lt;<arg fmt="%s" index="2">RAMB16_RAMB16A</arg>&gt;.  The block is configured to use input parity pins. There are dangling output parity pins.
+</msg>
+
+</messages>
+

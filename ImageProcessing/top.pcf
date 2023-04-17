@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Apr 03 11:49:15 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "tx" LOCATE = SITE "M14" LEVEL 1;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "rst" LOCATE = SITE "V4" LEVEL 1;
+COMP "effect<0>" LOCATE = SITE "L13" LEVEL 1;
+COMP "effect<1>" LOCATE = SITE "L14" LEVEL 1;
+COMP "done" LOCATE = SITE "F11" LEVEL 1;
+COMP "shr_or_eff" LOCATE = SITE "H18" LEVEL 1;
+COMP "start" LOCATE = SITE "H13" LEVEL 1;
+COMP "tx_active" LOCATE = SITE "F12" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+SCHEMATIC END;
+

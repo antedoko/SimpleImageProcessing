@@ -1,0 +1,8 @@
+verilog work "Tx.v"
+verilog work "shrink.v"
+verilog work "rom.v"
+verilog work "fifo.v"
+verilog work "effects.v"
+verilog work "Debounce.v"
+verilog work "BaudGenT.v"
+verilog work "top.v"

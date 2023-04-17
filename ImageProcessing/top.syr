@@ -1,0 +1,906 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Tx.v" in library work
+Compiling verilog file "shrink.v" in library work
+Module <Tx> compiled
+Compiling verilog file "rom.v" in library work
+Module <shrink> compiled
+Compiling verilog file "fifo.v" in library work
+Module <rom> compiled
+Compiling verilog file "effects.v" in library work
+Module <fifo> compiled
+Compiling verilog file "Debounce.v" in library work
+Module <effects> compiled
+Compiling verilog file "BaudGenT.v" in library work
+Module <Debounce> compiled
+Compiling verilog file "top.v" in library work
+Module <BaudGenT> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work> with parameters.
+	BPP = 3
+	FACTOR = 2
+	HIEGHT = 30
+	PEXILS = 900
+	SZ = 24
+	TICK_PER_HALF = 2604
+	VALUE = 60
+	WIDTH = 30
+
+Analyzing hierarchy for module <Debounce> in library <work> with parameters.
+	clock_freq = "00000010111110101111000010000000"
+	debounce_time = "00000000000000000000001111101000"
+	initial_value = "0"
+	s_initial = "000"
+	s_one = "011"
+	s_one_to_zero = "100"
+	s_zero = "001"
+	s_zero_to_one = "010"
+	timerlim = "00000000000000001100001101010000"
+
+Analyzing hierarchy for module <rom> in library <work> with parameters.
+	BPP = "00000000000000000000000000000011"
+	HIEGHT = "00000000000000000000000000011110"
+	PEXILS = "00000000000000000000001110000100"
+	WIDTH = "00000000000000000000000000011110"
+
+Analyzing hierarchy for module <shrink> in library <work> with parameters.
+	BPP = "00000000000000000000000000000011"
+	COL_LIM = 15
+	FACTOR = "00000000000000000000000000000010"
+	GET = "01"
+	HIEGHT = "00000000000000000000000000011110"
+	IDLE = "00"
+	JUMP = "11"
+	PEXILS = 900
+	SKIP = "10"
+	WIDTH = "00000000000000000000000000011110"
+
+Analyzing hierarchy for module <effects> in library <work> with parameters.
+	ACTIVE = "1"
+	BRIGHTEN = "01"
+	DARKEN = "10"
+	IDLE = "0"
+	INVERSION = "11"
+	NONE = "00"
+	VALUE = "00000000000000000000000000111100"
+
+Analyzing hierarchy for module <BaudGenT> in library <work> with parameters.
+	TICK_PER_HALF = "00000000000000000000101000101100"
+
+Analyzing hierarchy for module <fifo> in library <work> with parameters.
+	ADDR_WR = "00000000000000000000000011100001"
+	BPP = "00000000000000000000000000000011"
+	FACTOR = "00000000000000000000000000000010"
+	HIEGHT = "00000000000000000000000000011110"
+	PEXILS = "00000000000000000000001110000100"
+	WIDTH = "00000000000000000000000000011110"
+
+Analyzing hierarchy for module <Tx> in library <work> with parameters.
+	ACTIVE = "1"
+	IDLE = "0"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+	BPP = 3
+	FACTOR = 2
+	HIEGHT = 30
+	PEXILS = 900
+	SZ = 24
+	TICK_PER_HALF = 2604
+	VALUE = 60
+	WIDTH = 30
+Module <top> is correct for synthesis.
+ 
+Analyzing module <Debounce> in library <work>.
+	clock_freq = 32'sb00000010111110101111000010000000
+	debounce_time = 32'sb00000000000000000000001111101000
+	initial_value = 1'b0
+	s_initial = 3'b000
+	s_one = 3'b011
+	s_one_to_zero = 3'b100
+	s_zero = 3'b001
+	s_zero_to_one = 3'b010
+	timerlim = 32'sb00000000000000001100001101010000
+Module <Debounce> is correct for synthesis.
+ 
+Analyzing module <rom> in library <work>.
+	BPP = 32'sb00000000000000000000000000000011
+	HIEGHT = 32'sb00000000000000000000000000011110
+	PEXILS = 32'sb00000000000000000000001110000100
+	WIDTH = 32'sb00000000000000000000000000011110
+INFO:Xst:2546 - "rom.v" line 21: reading initialization file "input.txt".
+WARNING:Xst:905 - "rom.v" line 25: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <data_mem>
+Module <rom> is correct for synthesis.
+ 
+Analyzing module <shrink> in library <work>.
+	BPP = 32'sb00000000000000000000000000000011
+	COL_LIM = 15
+	FACTOR = 32'sb00000000000000000000000000000010
+	GET = 2'b01
+	HIEGHT = 32'sb00000000000000000000000000011110
+	IDLE = 2'b00
+	JUMP = 2'b11
+	PEXILS = 900
+	SKIP = 2'b10
+	WIDTH = 32'sb00000000000000000000000000011110
+Module <shrink> is correct for synthesis.
+ 
+Analyzing module <effects> in library <work>.
+	ACTIVE = 1'b1
+	BRIGHTEN = 2'b01
+	DARKEN = 2'b10
+	IDLE = 1'b0
+	INVERSION = 2'b11
+	NONE = 2'b00
+	VALUE = 32'sb00000000000000000000000000111100
+Module <effects> is correct for synthesis.
+ 
+Analyzing module <BaudGenT> in library <work>.
+	TICK_PER_HALF = 32'sb00000000000000000000101000101100
+Module <BaudGenT> is correct for synthesis.
+ 
+Analyzing module <fifo> in library <work>.
+	ADDR_WR = 32'sb00000000000000000000000011100001
+	BPP = 32'sb00000000000000000000000000000011
+	FACTOR = 32'sb00000000000000000000000000000010
+	HIEGHT = 32'sb00000000000000000000000000011110
+	PEXILS = 32'sb00000000000000000000001110000100
+	WIDTH = 32'sb00000000000000000000000000011110
+Module <fifo> is correct for synthesis.
+ 
+Analyzing module <Tx> in library <work>.
+	ACTIVE = 1'b1
+	IDLE = 1'b0
+Module <Tx> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Debounce>.
+    Related source file is "Debounce.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <signal_o>.
+    Found 17-bit up counter for signal <timer>.
+    Found 1-bit register for signal <timer_en>.
+    Found 1-bit register for signal <timer_tick>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <Debounce> synthesized.
+
+
+Synthesizing Unit <rom>.
+    Related source file is "rom.v".
+WARNING:Xst:1781 - Signal <data_mem> is used but never assigned. Tied to default value.
+    Found 900x24-bit ROM for signal <read_data>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <rom> synthesized.
+
+
+Synthesizing Unit <shrink>.
+    Related source file is "shrink.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <crnt_st> of Case statement line 64 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <crnt_st> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_1> for signal <crnt_st>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 24-bit latch for signal <pixel_out>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4-bit adder for signal <col_count$addsub0000> created at line 91.
+    Found 4-bit register for signal <col_count_r>.
+    Found 10-bit adder for signal <rd_address$share0000> created at line 64.
+    Found 10-bit register for signal <rd_address_r>.
+    Found 4-bit adder for signal <row_count$addsub0000> created at line 104.
+    Found 4-bit register for signal <row_count_r>.
+    Found 10-bit adder for signal <wr_address$share0000> created at line 64.
+    Found 10-bit register for signal <wr_address_r>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+Unit <shrink> synthesized.
+
+
+Synthesizing Unit <effects>.
+    Related source file is "effects.v".
+WARNING:Xst:646 - Signal <temp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_23>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_22>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_21>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_20>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_19>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_18>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_17>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_16>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_15>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_14>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_13>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_12>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_11>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_10>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_9>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_8>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pixel_out_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 10-bit adder for signal <count$addsub0000> created at line 135.
+    Found 10-bit register for signal <count_r>.
+    Found 1-bit register for signal <crnt_st>.
+    Found 8-bit adder carry out for signal <old_temp_b_1$addsub0000> created at line 95.
+    Found 10-bit subtractor for signal <old_temp_b_4$sub0000> created at line 107.
+    Found 8-bit adder carry out for signal <old_temp_g_2$addsub0000> created at line 96.
+    Found 10-bit subtractor for signal <old_temp_g_5$sub0000> created at line 108.
+    Found 8-bit adder carry out for signal <old_temp_r_3$addsub0000> created at line 97.
+    Found 10-bit subtractor for signal <old_temp_r_6$sub0000> created at line 109.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_0$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_1$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_10$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_11$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_12$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_13$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_14$mux0000> created at line 88.
+    Found 33-bit comparator greater for signal <pixel_out_15$cmp_gt0000> created at line 100.
+    Found 33-bit comparator less for signal <pixel_out_15$cmp_lt0000> created at line 112.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_15$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_16$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_17$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_18$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_19$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_2$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_20$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_21$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_22$mux0000> created at line 88.
+    Found 33-bit comparator greater for signal <pixel_out_23$cmp_gt0000> created at line 102.
+    Found 33-bit comparator less for signal <pixel_out_23$cmp_lt0000> created at line 114.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_23$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_3$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_4$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_5$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_6$mux0000> created at line 88.
+    Found 33-bit comparator greater for signal <pixel_out_7$cmp_gt0000> created at line 98.
+    Found 33-bit comparator less for signal <pixel_out_7$cmp_lt0000> created at line 110.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_7$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_8$mux0000> created at line 88.
+    Found 1-bit 4-to-1 multiplexer for signal <pixel_out_9$mux0000> created at line 88.
+    Found 10-bit adder for signal <rd_address$addsub0000> created at line 133.
+    Found 10-bit register for signal <rd_address_r>.
+    Found 10-bit adder for signal <temp$add0000> created at line 119.
+    Found 8-bit adder carry out for signal <temp$addsub0002> created at line 119.
+    Found 9-bit adder carry out for signal <temp$addsub0003> created at line 119.
+    Found 10-bit adder for signal <wr_address$addsub0000> created at line 134.
+    Found 10-bit register for signal <wr_address_r>.
+    Summary:
+	inferred  31 D-type flip-flop(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+	inferred  24 Multiplexer(s).
+Unit <effects> synthesized.
+
+
+Synthesizing Unit <BaudGenT>.
+    Related source file is "BaudGenT.v".
+WARNING:Xst:1780 - Signal <final_value> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <baud_clk>.
+    Found 12-bit up counter for signal <clock_ticks>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <BaudGenT> synthesized.
+
+
+Synthesizing Unit <fifo>.
+    Related source file is "fifo.v".
+    Found 900x24-bit dual-port RAM <Mram_data_mem> for signal <data_mem>.
+    Found 1-bit register for signal <wr_done>.
+    Found 24-bit register for signal <read_data>.
+    Found 1-bit register for signal <rd_done>.
+    Found 10-bit up counter for signal <rd_addr>.
+    Found 10-bit comparator equal for signal <rd_done$cmp_eq0000> created at line 54.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Counter(s).
+	inferred  26 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <fifo> synthesized.
+
+
+Synthesizing Unit <Tx>.
+    Related source file is "Tx.v".
+    Found 1-bit register for signal <crnt_st>.
+    Found 29-bit register for signal <frame_r>.
+    Found 5-bit register for signal <stop_count_r>.
+    Summary:
+	inferred  35 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <Tx> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:1780 - Signal <pixel_mid_out> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 900x24-bit dual-port RAM                              : 1
+# ROMs                                                 : 1
+ 900x24-bit ROM                                        : 1
+# Adders/Subtractors                                   : 17
+ 10-bit adder                                          : 6
+ 10-bit subtractor                                     : 3
+ 4-bit adder                                           : 2
+ 5-bit adder                                           : 1
+ 8-bit adder carry out                                 : 4
+ 9-bit adder carry out                                 : 1
+# Counters                                             : 6
+ 10-bit up counter                                     : 1
+ 12-bit up counter                                     : 1
+ 17-bit up counter                                     : 4
+# Registers                                            : 27
+ 1-bit register                                        : 17
+ 10-bit register                                       : 5
+ 24-bit register                                       : 1
+ 29-bit register                                       : 1
+ 4-bit register                                        : 2
+ 5-bit register                                        : 1
+# Latches                                              : 25
+ 1-bit latch                                           : 24
+ 24-bit latch                                          : 1
+# Comparators                                          : 7
+ 10-bit comparator equal                               : 1
+ 33-bit comparator greater                             : 3
+ 33-bit comparator less                                : 3
+# Multiplexers                                         : 24
+ 1-bit 4-to-1 multiplexer                              : 24
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <dwnsamp/crnt_st/FSM> on signal <crnt_st[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <dpb_rst/state/FSM> on signal <state[1:3]> with gray encoding.
+Optimizing FSM <dpb_strt/state/FSM> on signal <state[1:3]> with gray encoding.
+Optimizing FSM <dpb/state/FSM> on signal <state[1:3]> with gray encoding.
+Optimizing FSM <dpb1/state/FSM> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+
+Synthesizing (advanced) Unit <fifo>.
+INFO:Xst:3226 - The RAM <Mram_data_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <read_data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 900-word x 24-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <wr_clk>        | rise     |
+    |     weA            | connected to signal <wr_en_0>       | high     |
+    |     addrA          | connected to signal <wr_addr>       |          |
+    |     diA            | connected to signal <write_data>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 900-word x 24-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <rd_clk>        | rise     |
+    |     enB            | connected to signal <rd_done_and0000> | high     |
+    |     addrB          | connected to signal <rd_addr>       |          |
+    |     doB            | connected to signal <read_data>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# RAMs                                                 : 1
+ 900x24-bit dual-port block RAM                        : 1
+# ROMs                                                 : 1
+ 900x24-bit ROM                                        : 1
+# Adders/Subtractors                                   : 17
+ 10-bit adder                                          : 6
+ 10-bit subtractor                                     : 3
+ 4-bit adder                                           : 2
+ 5-bit adder                                           : 1
+ 8-bit adder carry out                                 : 4
+ 9-bit adder carry out                                 : 1
+# Counters                                             : 6
+ 10-bit up counter                                     : 1
+ 12-bit up counter                                     : 1
+ 17-bit up counter                                     : 4
+# Registers                                            : 109
+ Flip-Flops                                            : 109
+# Latches                                              : 25
+ 1-bit latch                                           : 24
+ 24-bit latch                                          : 1
+# Comparators                                          : 7
+ 10-bit comparator equal                               : 1
+ 33-bit comparator greater                             : 3
+ 33-bit comparator less                                : 3
+# Multiplexers                                         : 24
+ 1-bit 4-to-1 multiplexer                              : 24
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <rd_address_r_0> (without init value) has a constant value of 0 in block <shrink>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <top> ...
+
+Optimizing unit <Debounce> ...
+
+Optimizing unit <effects> ...
+
+Optimizing unit <fifo> ...
+
+Optimizing unit <Tx> ...
+
+Optimizing unit <shrink> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 14.
+FlipFlop dpb_strt/signal_o has been replicated 2 time(s)
+FlipFlop effu/crnt_st has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 215
+ Flip-Flops                                            : 215
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 10
+
+Cell Usage :
+# BELS                             : 1729
+#      GND                         : 1
+#      INV                         : 32
+#      LUT1                        : 128
+#      LUT2                        : 37
+#      LUT2_D                      : 2
+#      LUT3                        : 274
+#      LUT3_D                      : 1
+#      LUT4                        : 570
+#      LUT4_D                      : 11
+#      LUT4_L                      : 1
+#      MUXCY                       : 170
+#      MUXF5                       : 248
+#      MUXF6                       : 74
+#      MUXF7                       : 25
+#      VCC                         : 1
+#      XORCY                       : 154
+# FlipFlops/Latches                : 263
+#      FD                          : 34
+#      FDC                         : 1
+#      FDE                         : 11
+#      FDR                         : 156
+#      FDRE                        : 1
+#      FDS                         : 12
+#      LD                          : 48
+# RAMS                             : 2
+#      RAMB16_S18_S18              : 1
+#      RAMB16_S9_S9                : 1
+# Clock Buffers                    : 4
+#      BUFG                        : 3
+#      BUFGP                       : 1
+# IO Buffers                       : 9
+#      IBUF                        : 5
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      554  out of   4656    11%  
+ Number of Slice Flip Flops:            263  out of   9312     2%  
+ Number of 4 input LUTs:               1056  out of   9312    11%  
+ Number of IOs:                          10
+ Number of bonded IOBs:                  10  out of    232     4%  
+ Number of BRAMs:                         2  out of     20    10%  
+ Number of GCLKs:                         4  out of     24    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------+------------------------------+-------+
+Clock Signal                                            | Clock buffer(FF name)        | Load  |
+--------------------------------------------------------+------------------------------+-------+
+clk                                                     | BUFGP                        | 171   |
+effu/crnt_st2                                           | BUFG                         | 24    |
+baudgen/baud_clk1                                       | BUFG                         | 48    |
+dwnsamp/crnt_st_cmp_eq00021(dwnsamp/crnt_st_FSM_Out01:O)| BUFG(*)(dwnsamp/pixel_out_23)| 24    |
+--------------------------------------------------------+------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.879ns (Maximum Frequency: 145.370MHz)
+   Minimum input arrival time before clock: 5.244ns
+   Maximum output required time after clock: 10.564ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.879ns (frequency: 145.370MHz)
+  Total number of paths / destination ports: 3997 / 306
+-------------------------------------------------------------------------
+Delay:               6.879ns (Levels of Logic = 4)
+  Source:            effu/count_r_0 (FF)
+  Destination:       effu/wr_address_r_8 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: effu/count_r_0 to effu/wr_address_r_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.591   0.706  effu/count_r_0 (effu/count_r_0)
+     LUT4:I0->O            4   0.704   0.622  effu/rd_address_cmp_eq000016 (effu/rd_address_cmp_eq000016)
+     LUT4_D:I2->O         11   0.704   1.012  effu/rd_address_cmp_eq000028 (effu/rd_address_cmp_eq0000)
+     LUT2_D:I1->O          9   0.704   0.824  effu/count<0>21_1 (effu/count<0>21)
+     LUT4:I3->O            1   0.704   0.000  effu/wr_address<0>1 (effu/wr_address<0>)
+     FDR:D                     0.308          effu/wr_address_r_0
+    ----------------------------------------
+    Total                      6.879ns (3.715ns logic, 3.164ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'baudgen/baud_clk1'
+  Clock period: 5.666ns (frequency: 176.491MHz)
+  Total number of paths / destination ports: 384 / 82
+-------------------------------------------------------------------------
+Delay:               5.666ns (Levels of Logic = 3)
+  Source:            txu/stop_count_r_0 (FF)
+  Destination:       fi_fo/Mram_data_mem2 (RAM)
+  Source Clock:      baudgen/baud_clk1 rising
+  Destination Clock: baudgen/baud_clk1 rising
+
+  Data Path: txu/stop_count_r_0 to fi_fo/Mram_data_mem2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.712  txu/stop_count_r_0 (txu/stop_count_r_0)
+     LUT4_D:I1->O          1   0.704   0.424  txu/done_flag_SW0 (N100)
+     LUT4_D:I3->O          2   0.704   0.526  txu/done_flag (done_tx)
+     LUT2:I1->O            3   0.704   0.531  fi_fo/rd_done_and00001 (fi_fo/rd_done_and0000)
+     RAMB16_S9_S9:ENB          0.770          fi_fo/Mram_data_mem2
+    ----------------------------------------
+    Total                      5.666ns (3.473ns logic, 2.193ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 97 / 93
+-------------------------------------------------------------------------
+Offset:              5.244ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       baudgen/clock_ticks_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to baudgen/clock_ticks_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            71   1.218   1.450  rst_IBUF (rst_IBUF)
+     LUT4:I0->O           12   0.704   0.961  baudgen/clock_ticks_or00001 (baudgen/clock_ticks_or0000)
+     FDR:R                     0.911          baudgen/clock_ticks_0
+    ----------------------------------------
+    Total                      5.244ns (2.833ns logic, 2.411ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'baudgen/baud_clk1'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              3.404ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       txu/stop_count_r_4 (FF)
+  Destination Clock: baudgen/baud_clk1 rising
+
+  Data Path: rst to txu/stop_count_r_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            71   1.218   1.275  rst_IBUF (rst_IBUF)
+     FDR:R                     0.911          txu/stop_count_r_0
+    ----------------------------------------
+    Total                      3.404ns (2.129ns logic, 1.275ns route)
+                                       (62.6% logic, 37.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 53 / 3
+-------------------------------------------------------------------------
+Offset:              10.564ns (Levels of Logic = 6)
+  Source:            effu/count_r_5 (FF)
+  Destination:       done (PAD)
+  Source Clock:      clk rising
+
+  Data Path: effu/count_r_5 to done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.591   0.762  effu/count_r_5 (effu/count_r_5)
+     LUT2:I0->O            1   0.704   0.000  effu/rd_address_cmp_eq000028_SW1_G (N110)
+     MUXF5:I1->O           3   0.321   0.535  effu/rd_address_cmp_eq000028_SW1 (N105)
+     LUT4_D:I3->O         20   0.704   1.181  effu/done1 (effect_done)
+     LUT3:I1->O            4   0.704   0.666  apply_done (op_done_OBUF)
+     LUT4:I1->O            1   0.704   0.420  done1 (done_OBUF)
+     OBUF:I->O                 3.272          done_OBUF (done)
+    ----------------------------------------
+    Total                     10.564ns (7.000ns logic, 3.564ns route)
+                                       (66.3% logic, 33.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'baudgen/baud_clk1'
+  Total number of paths / destination ports: 17 / 3
+-------------------------------------------------------------------------
+Offset:              8.013ns (Levels of Logic = 4)
+  Source:            txu/stop_count_r_0 (FF)
+  Destination:       done (PAD)
+  Source Clock:      baudgen/baud_clk1 rising
+
+  Data Path: txu/stop_count_r_0 to done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.591   0.712  txu/stop_count_r_0 (txu/stop_count_r_0)
+     LUT4_D:I1->O          1   0.704   0.424  txu/done_flag_SW0 (N100)
+     LUT4_D:I3->O          2   0.704   0.482  txu/done_flag (done_tx)
+     LUT4:I2->O            1   0.704   0.420  done1 (done_OBUF)
+     OBUF:I->O                 3.272          done_OBUF (done)
+    ----------------------------------------
+    Total                      8.013ns (5.975ns logic, 2.038ns route)
+                                       (74.6% logic, 25.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.98 secs
+ 
+--> 
+
+Total memory usage is 289432 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   31 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

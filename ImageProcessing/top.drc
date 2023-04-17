@@ -1,0 +1,12 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Apr 03 11:49:37 2023
+
+drc -z top.ncd top.pcf
+
+WARNING:PhysDesignRules:1060 - Issue with pin connections and/or configuration
+   on block:<fi_fo/Mram_data_mem1.A>:<RAMB16_RAMB16A>.  The block is configured
+   to use input parity pins. There are dangling output parity pins.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

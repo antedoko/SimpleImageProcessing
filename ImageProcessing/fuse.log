@@ -1,0 +1,33 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/top_tb_isim_beh.exe -prj C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/top_tb_beh.prj work.top_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/Tx.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/shrink.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/rom.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/fifo.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/effects.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/Debounce.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/BaudGenT.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/top.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/top_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module Debounce_default
+Compiling module rom(HIEGHT=30,WIDTH=30,BPP=3)
+Compiling module shrink(FACTOR=2,BPP=3,HIEGHT=30,...
+Compiling module effects(VALUE=50)
+Compiling module BaudGenT(TICK_PER_HALF=2604)
+Compiling module fifo(HIEGHT=30,WIDTH=30,BPP=3)
+Compiling module Tx
+Compiling module top(FACTOR=2,VALUE=50,BPP=3,HIEG...
+Compiling module top_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 10 Verilog Units
+Built simulation executable C:/Users/Student/Desktop/Projekt_DJK/ImageProcessing/top_tb_isim_beh.exe
+Fuse Memory Usage: 27952 KB
+Fuse CPU Usage: 436 ms
